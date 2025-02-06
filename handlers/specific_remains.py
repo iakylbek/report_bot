@@ -1,0 +1,29 @@
+from aiogram import Router, F
+from aiogram.types import CallbackQuery, Message
+from aiogram.filters import StateFilter
+from aiogram.fsm.context import FSMContext
+from aiogram.fsm.state import StatesGroup, State
+
+specific_remains_router = Router()
+
+
+class ProductSearch(StatesGroup):
+    product_name = State()
+
+
+@specific_remains_router.callback_query(F.data == "specific_remains")
+async def ask_for_product(callback: CallbackQuery, state: FSMContext):
+    await callback.message.answer("Введите название товара:")
+    await state.set_state(ProductSearch.product_name)
+
+
+@specific_remains_router.message(StateFilter(ProductSearch.product_name))
+async def show_product_info(message: Message, state: FSMContext):
+    product_name = message.text
+
+    product_info = (
+        f"Информация о товаре '{product_name}':\n🔹 Остаток: 15 шт.\n💰 Цена: 500₽"
+    )
+
+    await message.answer(product_info)
+    await state.clear()
