@@ -9,6 +9,9 @@ from handlers import (
     remains_router,
     total_remains_router,
     specific_remains_router,
+    receipt_router,
+    total_receipt_router,
+    specific_receipt_router
 )
 from config import BOT_TOKEN
 
@@ -24,6 +27,9 @@ async def main():
         remains_router,
         total_remains_router,
         specific_remains_router,
+        receipt_router,
+        specific_receipt_router,
+        total_receipt_router,
         echo_router,
     )
 

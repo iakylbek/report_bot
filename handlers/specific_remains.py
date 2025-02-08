@@ -12,9 +12,9 @@ class ProductSearch(StatesGroup):
 
 
 @specific_remains_router.callback_query(F.data == "specific_remains")
-async def ask_for_product(callback: CallbackQuery, state: FSMContext):
-    await callback.message.answer("Введите название товара:")
+async def get_product_name(callback: CallbackQuery, state: FSMContext):
     await state.set_state(ProductSearch.product_name)
+    await callback.message.answer("Введите название товара:")
 
 
 @specific_remains_router.message(StateFilter(ProductSearch.product_name))
