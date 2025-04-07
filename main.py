@@ -11,7 +11,10 @@ from handlers import (
     specific_remains_router,
     receipt_router,
     total_receipt_router,
-    specific_receipt_router
+    specific_receipt_router, 
+    shipment_router,
+    total_shipment_router,
+    specific_shipment_router,
 )
 from config import BOT_TOKEN
 
@@ -24,12 +27,19 @@ async def main():
     # Подключаем роутер
     dp.include_routers(
         start_router,
+        
         remains_router,
         total_remains_router,
         specific_remains_router,
+        
         receipt_router,
         specific_receipt_router,
         total_receipt_router,
+        
+        shipment_router,
+        total_shipment_router,
+        specific_shipment_router,
+        
         echo_router,
     )
 

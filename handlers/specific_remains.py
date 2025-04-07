@@ -2,14 +2,10 @@ from aiogram import Router, F
 from aiogram.types import CallbackQuery, Message
 from aiogram.filters import StateFilter
 from aiogram.fsm.context import FSMContext
-from aiogram.fsm.state import StatesGroup, State
+from states_group import ProductSearch
+
 
 specific_remains_router = Router()
-
-
-class ProductSearch(StatesGroup):
-    product_name = State()
-
 
 @specific_remains_router.callback_query(F.data == "specific_remains")
 async def get_product_name(callback: CallbackQuery, state: FSMContext):

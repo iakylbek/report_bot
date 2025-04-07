@@ -5,6 +5,6 @@ from keyboards.remains_kb import get_remains_keyboard
 remains_router = Router()
 
 @remains_router.message(F.text == "Остатки")
-async def start(message: Message):
+async def remains(message: Message):
     text = "Выберите дейстиве:"
     await message.answer(text, reply_markup=get_remains_keyboard())
