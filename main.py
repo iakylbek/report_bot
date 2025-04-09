@@ -1,17 +1,18 @@
 import asyncio
 import logging
 import sys
+
 from aiogram import Bot, Dispatcher
 from aiogram.fsm.storage.memory import MemoryStorage
+
 from handlers import (
-    echo_router,
     start_router,
     remains_router,
     total_remains_router,
     specific_remains_router,
     receipt_router,
     total_receipt_router,
-    specific_receipt_router, 
+    specific_receipt_router,
     shipment_router,
     total_shipment_router,
     specific_shipment_router,
@@ -27,20 +28,18 @@ async def main():
     # Подключаем роутер
     dp.include_routers(
         start_router,
-        
+
         remains_router,
         total_remains_router,
         specific_remains_router,
-        
+
         receipt_router,
         specific_receipt_router,
         total_receipt_router,
-        
+
         shipment_router,
         total_shipment_router,
         specific_shipment_router,
-        
-        echo_router,
     )
 
     # Запускаем бота
