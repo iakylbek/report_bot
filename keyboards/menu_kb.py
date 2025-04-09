@@ -6,7 +6,7 @@ def get_menu_keyboard():
         resize_keyboard=True,
         keyboard=[
             [
-                KeyboardButton(text="Остатки"), 
+                KeyboardButton(text="Остатки"),
                 KeyboardButton(text="Отгрузки")],
             [
                 KeyboardButton(text="Поступления"),

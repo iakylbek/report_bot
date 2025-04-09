@@ -8,6 +8,9 @@ from .specific_receipt import specific_receipt_router
 from .shipment import shipment_router
 from .total_shipment import total_shipment_router
 from .specific_shipment import specific_shipment_router
+from .actions.employy import employy_router
+from .actions.product import product_router
+
 
 __all__ = [
     "start_router",
@@ -23,4 +26,7 @@ __all__ = [
     "shipment_router",
     "total_shipment_router",
     'specific_shipment_router',
+
+    "employy_router",
+    "product_router",
 ]

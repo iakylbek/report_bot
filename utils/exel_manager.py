@@ -52,3 +52,14 @@ class ExelManager():
 
         self.save_data()
 
+    def add_product(self, article, name, price, responsible, comment):
+        sheet = self.workbook["Товары"]
+        next_row = sheet.max_row + 1
+
+        sheet.cell(row=next_row, column=1, value=article)
+        sheet.cell(row=next_row, column=2, value=name)
+        sheet.cell(row=next_row, column=3, value=price)
+        sheet.cell(row=next_row, column=4, value=responsible)
+        sheet.cell(row=next_row, column=5, value=comment)
+
+        self.save_data()
