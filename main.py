@@ -18,6 +18,7 @@ from handlers import (
     specific_shipment_router,
     employy_router,
     product_router,
+    operation_router,
 )
 from config import BOT_TOKEN
 
@@ -45,6 +46,7 @@ async def main():
 
         employy_router,
         product_router,
+        operation_router,
     )
 
     # Запускаем бота

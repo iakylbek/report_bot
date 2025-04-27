@@ -3,7 +3,7 @@ from aiogram.types import Message
 from aiogram.fsm.context import FSMContext
 
 from utils.exel_manager import ExelManager
-from states.employy_states import EmployeeState
+from states.employy_state import EmployeeState
 
 employy_router = Router()
 

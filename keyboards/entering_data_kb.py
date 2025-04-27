@@ -7,7 +7,7 @@ def get_data_entry_keyboard():
         keyboard=[
             [KeyboardButton(text="Добавить сотрудника")],
             [KeyboardButton(text="Добавить товар")],
-            [KeyboardButton(text="Внести поступления или отгрузку")],
+            [KeyboardButton(text="Внести поступления/отгрузку")],
             [KeyboardButton(text="⬅️ Назад")],
         ],
     )
